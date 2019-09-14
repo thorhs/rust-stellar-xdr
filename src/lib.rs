@@ -2,4 +2,4 @@
 use xdr_codec;
 
 #[allow(dead_code)]
-include!("./Stellar.rs");
+include!(concat!(env!("OUT_DIR"), "/Stellar.rs"));

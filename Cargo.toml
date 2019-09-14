@@ -13,3 +13,7 @@ git = "https://github.com/jsgf/rust-xdr"
 
 [dev-dependencies]
 base64 = "*"
+
+[build-dependencies]
+multi_reader = "*"
+xdrgen = "*"
