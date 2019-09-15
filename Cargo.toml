@@ -1,6 +1,6 @@
 [package]
 name = "rust-stellar-xdr"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Thorhallur Sverrisson <toti@toti.is>"]
 edition = "2018"
 
