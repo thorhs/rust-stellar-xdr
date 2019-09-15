@@ -12,11 +12,18 @@ fn main() {
     let output = File::create(&dest_path).unwrap();
 
     let files = read_dir("xdr").unwrap();
+    println!("cargo:rerun-if-changed=xdr/");
 
     let mr = multi_reader::MultiReader::new(
         files
             .filter(|p| p.as_ref().unwrap().path().extension().unwrap_or_default() == "x")
-            .map(|p| File::open(p.unwrap().path()).unwrap()),
+            .map(|p| {
+                println!(
+                    "cargo:rerun-if-changed={}",
+                    p.as_ref().unwrap().path().display()
+                );
+                File::open(p.unwrap().path()).unwrap()
+            }),
     );
 
     xdrgen::generate("all the files in the xdr folder", mr, output).unwrap();
