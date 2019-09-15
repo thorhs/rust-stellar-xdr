@@ -15,13 +15,13 @@ license = "MIT"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+crc16 = "0.4"
+data-encoding = "2.1"
+byteorder = "1.3"
 
 [dependencies.xdr-codec]
 #git = "https://github.com/jsgf/rust-xdr"
 version = "^0.4.4"
-
-[dev-dependencies]
-base64 = "0.10"
 
 [build-dependencies]
 multi_reader = "0.1"
